@@ -4,15 +4,6 @@
   box-sizing: border-box;
 }
 
-article,
-aside,
-footer,
-header,
-nav,
-section {
-  display: block;
-}
-
 li {
   list-style: none;
 }
@@ -21,6 +12,7 @@ a {
   text-decoration: none;
 }
 
+/* Set two main colors in the page  */
 :root {
   --primary-color: rgb(146, 204, 205);
   --secondary-color: rgb(55, 77, 110);
@@ -28,10 +20,11 @@ a {
 
 body {
   background-color: rgb(238, 238, 246);
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: Arial, sans-serif;
 }
-/* Header Style Start  */
 
+
+/* HEADER Style Start  */
 header {
   display: flex;
   flex-wrap: wrap;
@@ -49,7 +42,6 @@ header h1 {
 header ul {
   display: flex;
   justify-content: flex-end;
-  /* align-items: center; */
 }
 
 header nav li {
@@ -60,7 +52,7 @@ header nav li {
 
 header nav li a {
   color: var(--primary-color);
-  padding: 2px 5px;
+  padding: 14px 15px;
   border-bottom: 3px solid var(--primary-color);
   font-size: 18px;
 }
@@ -69,9 +61,10 @@ header nav li a:hover {
   color: rgb(49, 52, 61);
   background-color: var(--primary-color);
 }
+/* HEADER Style End  */
 
-/* Header Style End  */
 
+/* Layout of the main - Start */
 .body-layout {
   display: flex;
   flex-wrap: nowrap;
@@ -92,7 +85,10 @@ header nav li a:hover {
   flex: 0 1 auto;
   padding-left: 25px;
 }
+/* Layout of the main - End */
 
+
+/* BANNER Style Start  */
 .hero {
   position: relative;
   width: 100%;
@@ -110,10 +106,12 @@ header nav li a:hover {
   background-color: var(--primary-color);
   padding: 2px 10px;
 }
+/* BANNER Style End  */
 
+
+/* ABOUT-ME Style Start  */
 .about-me {
   display: flex;
-  /* flex-wrap:wrap; */
 }
 
 .about-me img {
@@ -125,7 +123,9 @@ header nav li a:hover {
   font-size: 13px;
   line-height: 1.5;
 }
+/* ABOUT-ME  Style End */
 
+/* WORK Style Start  */
 .works {
   display: flex;
   flex-wrap: wrap;
@@ -133,47 +133,57 @@ header nav li a:hover {
 }
 
 .works article {
-  flex: 1 40%;
-  margin: 4px;
+  flex: 1 1 40%;
+  margin:5px;
+  border: 4px solid var(--primary-color);
 }
 
 .works > article:first-child {
-  flex: 100%;
-}
-
-.works article:hover {
-  transform: scale(150%);
-  z-index: 999;
-  /* position: relative; */
-}
-
-.works article:first-child:hover {
-  transform: scale(100%);
+  flex:100%;
 }
 
 .works article div {
   position: relative;
+  height:100%;
 }
 
-.works img {
-  border: 4px solid var(--primary-color);
+.works article img {
+  height:100%;
+  width:100%;
+}
+
+.works article a::before{   
+  position: absolute;
+  content:"";
   width: 100%;
+  height:100%;
+  background-color: var(--secondary-color);
+  opacity: 0.4;
+  top:0;
+  left:0;
+  display:block;
+}
+
+.works article a:hover::before{
+ display:none;
 }
 
 .works article h4 {
+  position: absolute;
   padding: 6px 8px;
   background-color: var(--primary-color);
   font-size: 18px;
-  position: absolute;
-  bottom: 30px;
-  left: 4px;
+  bottom: 15px;
+  left:10x;
 }
 
 .works article h4 span {
   font-size: 11px;
   font-weight: normal;
 }
+/* WORK Style End */
 
+/* FOOTER  Style Start */
 .contact-info {
   width: 100%;
 }
@@ -197,8 +207,10 @@ header nav li a:hover {
   font-weight: 700;
   border-bottom: 5px solid var(--secondary-color);
 }
+/* FOOTER Style End */
 
-@media screen and (max-width: 575px) {
+/* responsive layout on screen under 980px */
+@media screen and (max-width: 980px) {
   header {
     text-align: center;
     padding: 0px;
@@ -218,7 +230,7 @@ header nav li a:hover {
   }
 
   header nav li a {
-    padding: 2px 0 3px 0;
+    height:100%;
     border: none;
   }
   .body-layout {
@@ -229,6 +241,10 @@ header nav li a:hover {
     margin-bottom: 10px;
     text-align: left;
     border: none;
+  }
+
+  .hero{
+    display:none;
   }
   .works article {
     flex: 100%;
@@ -241,5 +257,21 @@ header nav li a:hover {
   }
   .contact-info ul a {
     border: none;
+  }
+}
+
+/* limit the box size of WORK on screen over 1200px  */
+@media screen and (min-width: 1200px) {
+  .works{
+    justify-content: flex-start;
+
+  }
+  
+  .works article:first-child{
+    flex: 0 0 45%;
+  }
+
+  .works article{
+    flex:0 0 45%;
   }
 }
