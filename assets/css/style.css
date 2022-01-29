@@ -41,18 +41,16 @@ header h1 {
 
 header ul {
   display: flex;
-  justify-content: flex-end;
 }
 
 header nav li {
-  flex: auto;
+  display: flex;
   margin: 0 5px;
-  text-align: right;
 }
 
 header nav li a {
   color: var(--primary-color);
-  padding: 14px 15px;
+  padding: 10px 15px;
   border-bottom: 3px solid var(--primary-color);
   font-size: 18px;
 }
@@ -117,7 +115,7 @@ header nav li a:hover {
 }
 
 .about-me p {
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.5;
 }
 /* ABOUT-ME Style End */
@@ -222,14 +220,16 @@ header nav li a:hover {
     padding: 5px 0;
   }
 
-  header ul {
-    padding: 5px 0;
+  header nav li {
+    flex: 1;
+    justify-content: center;
+    margin: 0px;
   }
 
   header nav li a {
-    height: 100%;
     border: none;
   }
+
   .body-layout {
     flex-wrap: wrap;
   }
