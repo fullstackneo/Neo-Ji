@@ -15,7 +15,7 @@ Neo Ji is a prospective fullstack web developer. I am currently enrolled in Codi
 
 ## Demo Screenshot
 
-![image](https://github.com/fullstackneo/neo-ji/blob/main/screenshot/demo.png)
+![image](https://github.com/fullstackneo/Neo-Ji/blob/main/screenshots/screenshot.png)
 
 ## Link
 
