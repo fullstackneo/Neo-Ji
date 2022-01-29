@@ -12,17 +12,17 @@ a {
   text-decoration: none;
 }
 
-/* Set two main colors in the page  */
+/* set main colors */
 :root {
   --primary-color: rgb(146, 204, 205);
   --secondary-color: rgb(55, 77, 110);
 }
+/* end set main colors */
 
 body {
   background-color: rgb(238, 238, 246);
   font-family: Arial, sans-serif;
 }
-
 
 /* HEADER Style Start  */
 header {
@@ -63,7 +63,6 @@ header nav li a:hover {
 }
 /* HEADER Style End  */
 
-
 /* Layout of the main - Start */
 .body-layout {
   display: flex;
@@ -87,7 +86,6 @@ header nav li a:hover {
 }
 /* Layout of the main - End */
 
-
 /* BANNER Style Start  */
 .hero {
   position: relative;
@@ -108,7 +106,6 @@ header nav li a:hover {
 }
 /* BANNER Style End  */
 
-
 /* ABOUT-ME Style Start  */
 .about-me {
   display: flex;
@@ -123,7 +120,7 @@ header nav li a:hover {
   font-size: 13px;
   line-height: 1.5;
 }
-/* ABOUT-ME  Style End */
+/* ABOUT-ME Style End */
 
 /* WORK Style Start  */
 .works {
@@ -134,38 +131,38 @@ header nav li a:hover {
 
 .works article {
   flex: 1 1 40%;
-  margin:5px;
+  margin: 5px;
   border: 4px solid var(--primary-color);
 }
 
 .works > article:first-child {
-  flex:100%;
+  flex: 100%;
 }
 
 .works article div {
   position: relative;
-  height:100%;
+  height: 100%;
 }
 
 .works article img {
-  height:100%;
-  width:100%;
+  height: 100%;
+  width: 100%;
 }
 
-.works article a::before{   
+.works article a::before {
   position: absolute;
-  content:"";
+  content: "";
   width: 100%;
-  height:100%;
+  height: 100%;
   background-color: var(--secondary-color);
   opacity: 0.4;
-  top:0;
-  left:0;
-  display:block;
+  top: 0;
+  left: 0;
+  display: block;
 }
 
-.works article a:hover::before{
- display:none;
+.works article a:hover::before {
+  display: none;
 }
 
 .works article h4 {
@@ -174,7 +171,7 @@ header nav li a:hover {
   background-color: var(--primary-color);
   font-size: 18px;
   bottom: 15px;
-  left:10x;
+  left: 10x;
 }
 
 .works article h4 span {
@@ -209,8 +206,8 @@ header nav li a:hover {
 }
 /* FOOTER Style End */
 
-/* responsive layout on screen under 980px */
-@media screen and (max-width: 980px) {
+/* responsive layout on screen under 768px */
+@media screen and (max-width: 768px) {
   header {
     text-align: center;
     padding: 0px;
@@ -230,7 +227,7 @@ header nav li a:hover {
   }
 
   header nav li a {
-    height:100%;
+    height: 100%;
     border: none;
   }
   .body-layout {
@@ -243,8 +240,8 @@ header nav li a:hover {
     border: none;
   }
 
-  .hero{
-    display:none;
+  .hero {
+    display: none;
   }
   .works article {
     flex: 100%;
@@ -255,23 +252,16 @@ header nav li a:hover {
     flex-wrap: nowrap;
     align-items: flex-start;
   }
+
   .contact-info ul a {
     border: none;
   }
 }
 
-/* limit the box size of WORK on screen over 1200px  */
-@media screen and (min-width: 1200px) {
-  .works{
-    justify-content: flex-start;
-
-  }
-  
-  .works article:first-child{
-    flex: 0 0 45%;
-  }
-
-  .works article{
-    flex:0 0 45%;
+/* limit the box size on screen over 1200px  */
+@media screen and (min-width: 1400px) {
+  body {
+    width: 80%;
+    margin: 0 auto;
   }
 }
