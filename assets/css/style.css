@@ -145,6 +145,7 @@ header nav li a:hover {
 .works article img {
   height: 100%;
   width: 100%;
+  object-fit: cover;
 }
 
 .works article a::before {
@@ -225,6 +226,10 @@ header nav li a:hover {
     justify-content: center;
     align-items: center;
     margin: 0px;
+  }
+
+  header nav li:hover {
+    background-color: var(--primary-color);
   }
 
   header nav li a {
